@@ -27,7 +27,7 @@
     },
     {
       name: 'traefikExporter',
-      enabled: false,
+      enabled: true,
       file: import 'traefik.jsonnet',
     },
     {
@@ -38,12 +38,12 @@
   ],
 
   k3s: {
-    enabled: false,
-    master_ip: ['192.168.15.15'],
+    enabled: true,
+    master_ip: ['51.158.100.201'],
   },
 
   // Domain suffix for the ingresses
-  suffixDomain: '192.168.15.15.nip.io',
+  suffixDomain: 'cluster.thebookofjoel.com',
   // If TLSingress is true, a self-signed HTTPS ingress with redirect will be created
   TLSingress: true,
   // If UseProvidedCerts is true, provided files will be used on created HTTPS ingresses.
@@ -54,8 +54,8 @@
 
   // Setting these to false, defaults to emptyDirs
   enablePersistence: {
-    prometheus: false,
-    grafana: false,
+    prometheus: true,
+    grafana: true,
   },
 
   // Grafana "from" email
